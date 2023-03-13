@@ -1,0 +1,336 @@
+* {
+  box-sizing: border-box;
+}
+
+$firstBlack: #181818;
+$secondBlack: #27272A;
+$nativeBlack: #000000;
+$greenBlack: #01271C;
+$footerBlack: #3F3F46;
+
+
+$primary: #4CFDC7;
+$red: #F43F5E;
+$gray: #71717A;
+
+$tablet: 1024px;
+$mobileL: 768px;
+$mobileM: 520px;
+$mobileS: 480px;
+$mobileXS: 320px;
+
+$br: 4px;
+
+@font-face {
+  font-family: "regular";
+  src: url(../fonts/regular.ttf);
+
+}
+
+body {
+  font-family: "regular", sans-serif;
+}
+
+.container {
+  max-width: 1200px;
+  padding: 0px 32px;
+  margin: 0 auto;
+}
+
+nav {
+  .nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 80px;
+
+    .nav__items {
+      display: flex;
+      align-items: center;
+      gap: 32px;
+
+      .mobile__menu__btn {
+        display: none;
+      }
+
+      .nav__menu {
+        display: flex;
+        gap: 32px;
+
+
+        li {
+          list-style-type: none;
+
+          a {
+            color: $firstBlack;
+            text-decoration: none;
+          }
+        }
+      }
+
+      .nav__btns {
+        display: flex;
+        gap: 8px;
+
+        button {
+          border-radius: $br;
+          padding: 9px 17px;
+          cursor: pointer;
+          color: $firstBlack;
+          font-size: 12px;
+
+          &#login {
+            border: 1px solid $firstBlack;
+            background: transparent;
+
+            svg {
+              display: none;
+            }
+          }
+
+          &#signup {
+            border: 1px solid $primary;
+            background: $primary;
+
+            svg {
+              display: none;
+            }
+          }
+        }
+      }
+    }
+
+    @media screen and (max-width: 890px) {
+      .logo {
+        svg {
+          width: 152px;
+          height: 16px;
+        }
+      }
+
+      .nav__items {
+        gap: 16px;
+
+        .nav__menu {
+          gap: 16px;
+        }
+      }
+    }
+
+    @media screen and (max-width: $mobileL) {
+      .nav__items {
+
+        .nav__menu {
+          display: none;
+        }
+
+        .mobile__menu__btn {
+          cursor: pointer;
+          display: block;
+        }
+      }
+    }
+
+    @media screen and (max-width: $mobileM) {
+      .nav__items {
+        .nav__btns {
+          gap: 16px;
+
+          button {
+
+            &#login {
+              padding-right: 0;
+              border: none;
+
+              svg {
+
+                width: 32px;
+                height: 32px;
+                display: block;
+              }
+
+              span {
+                display: none;
+              }
+
+            }
+
+            &#signup {
+              padding: 0;
+              border: none;
+              background: transparent;
+
+              svg {
+                display: block;
+                width: 46px;
+                height: 46px;
+              }
+
+              span {
+                display: none;
+              }
+            }
+          }
+        }
+      }
+
+    }
+
+    @media screen and (max-width: $mobileS) {
+      .nav__items {
+        display: flex;
+        flex-direction: column;
+
+        .nav__btns {
+          display: flex;
+          flex-direction: column;
+          gap: 16px;
+
+          button {
+
+            &#login {
+              padding-right: 0;
+              padding-left: 8px;
+              border: none;
+
+              svg {
+
+                width: 32px;
+                height: 32px;
+              }
+
+              span {
+                display: none;
+              }
+
+            }
+
+            &#signup {
+              padding: 0;
+              border: none;
+              background: transparent;
+
+              svg {
+                width: 46px;
+                height: 46px;
+              }
+
+              span {
+                display: none;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    @media screen and (max-width: $mobileXS){
+      .nav__items {
+        gap: 8px;
+        .nav__menu {
+          gap: 8px;
+        }
+
+        .mobile__menu__btn {
+          svg {
+            width: 30px;
+          }
+        }
+      }
+    }
+  }
+}
+
+header {
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 130px;
+    gap: 64px;
+
+    .header__left {
+      max-width: 659px;
+      h1 {
+        font-size: min(71px, max(40px + 2vw));
+        font-weight: 400;
+        color: $nativeBlack;
+      }
+
+      p {
+       margin: 34px 0px;
+       max-width: 461px; 
+       color: $secondBlack;
+      }
+
+      .header__left__btns {
+        display: flex;
+        gap: 16px;
+        margin-bottom: 16px;
+        a {
+          display: block;
+          padding: 9px 33px;
+          border-radius: $br;
+          text-decoration: none;
+
+          &:nth-child(1) {
+            background: $primary;
+            color: $greenBlack;
+          }
+          &:nth-child(2) {
+            background: transparent;
+            color: $greenBlack;
+            border: 1px solid $firstBlack;
+          }
+        }
+      }
+
+      .header__left__stars {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        user-select: none;
+        color: $secondBlack;
+      }
+    }
+  
+    
+
+    @media screen and (max-width: $mobileL) {
+      justify-content: center;
+      flex-wrap: wrap;
+      text-align: center;
+      padding-top: 65px;
+
+      .header__left {
+        
+        .header__left__btns, .header__left__stars {
+          justify-content: center;
+        }
+      }   
+    }
+
+    @media screen and (max-width: $mobileS) {
+      justify-content: center;
+      flex-wrap: wrap;
+      text-align: center;
+      padding-top: 32.5px;
+
+      .header__left {
+        
+        .header__left__btns {
+          flex-wrap: wrap;
+          a {
+            width: 100%;
+          }
+        }
+      } 
+      .header__right {
+        .header__right__img {
+          width: 100%;
+        }
+      }
+    }
+  }
+  
+}
