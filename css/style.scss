@@ -9,269 +9,277 @@ $darkGray: #71717A;
 $lightGray : #a1a1aa;
 $grayBorder: #f4f4f5;
 $green : #10b981;
+
 $tablet: 1024px;
 $mobileL: 768px;
 $mobileM: 580px;
 $mobileS: 480px;
 $mobileXS: 380px;
+
 $br: 4px;
 $tablePadding : 16px 0px;
 
 @font-face {
-  font-family: "regular";
-  src: url("../fonts/regular.ttf");
+	font-family: "regular";
+	src: url("../fonts/regular.ttf");
 }
 
 @font-face {
-  font-family: "bold";
-  src: url("../fonts/bold.ttf");
+	font-family: "bold";
+	src: url("../fonts/bold.ttf");
 }
 
 body {
-  font-family: "regular", sans-serif;
+	font-family: "regular", sans-serif;
 }
 
 .container {
-  max-width: 1200px;
-  padding: 0px 32px;
-  margin: 0 auto;
+	max-width: 1200px;
+	padding: 0px 32px;
+	margin: 0 auto;
 }
 
 nav {
-  .nav {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    min-height: 80px;
+	.nav {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		min-height: 80px;
 
-    .logo {
-      .full__logo {
-        display: block;
-      }
+		.logo {
+			.full__logo {
+				display: block;
+			}
 
-      .mobile__logo {
-        display: none;
-      }
-    }
+			.mobile__logo {
+				display: none;
+			}
+		}
 
-    .nav__items {
-      display: flex;
-      align-items: center;
-      gap: 32px;
+		.nav__items {
+			display: flex;
+			align-items: center;
+			gap: 32px;
 
-      .mobile__menu__btn {
-        display: none;
-        cursor: pointer;
-      }
+			.mobile__menu__btn {
+				display: none;
+				cursor: pointer;
+			}
 
-      .nav__menu {
-        display: flex;
-        gap: 32px;
+			.nav__menu {
+				display: flex;
+				gap: 32px;
 
-        li {
-          list-style-type: none;
+				li {
+					list-style-type: none;
 
-          a {
-            color: $firstBlack;
-            text-decoration: none;
-          }
-        }
-      }
+					a {
+						color: $firstBlack;
+						text-decoration: none;
+					}
+				}
+			}
 
-      .nav__btns {
-        display: flex;
-        gap: 8px;
+			.nav__btns {
+				display: flex;
+				gap: 8px;
 
-        button {
-          border-radius: $br;
-          padding: 9px 17px;
-          cursor: pointer;
-          color: $firstBlack;
-          font-size: 12px;
+				button {
+					border-radius: $br;
+					padding: 9px 17px;
+					cursor: pointer;
+					color: $firstBlack;
+					font-size: 12px;
 
-          &#login {
-            border: 1px solid $firstBlack;
-            background: transparent;
-          }
+					&#login {
+						border: 1px solid $firstBlack;
+						background: transparent;
+					}
 
-          &#signup {
-            border: 1px solid $primary;
-            background: $primary;
-            color: $greenBlack;
-          }
-        }
-      }
-    }
+					&#signup {
+						border: 1px solid $primary;
+						background: $primary;
+						color: $greenBlack;
+					}
+				}
+			}
+		}
 
-    @media screen and (max-width: 890px) {
-      .logo {
-        svg {
-          width: 152px;
-          height: 16px;
-        }
-      }
+		@media screen and (max-width: 890px) {
+			.logo {
+				svg {
+					width: 152px;
+					height: 16px;
+				}
+			}
 
-      .nav__items {
-        gap: 16px;
+			.nav__items {
+				gap: 16px;
 
-        .nav__menu {
-          gap: 16px;
-        }
-      }
-    }
+				.nav__menu {
+					gap: 16px;
+				}
+			}
+		}
 
-    @media screen and (max-width: $mobileL) {
-      .logo {
-        svg {
-          width: unset;
-          height: unset;
-        }
+		@media screen and (max-width: $mobileL) {
+			.logo {
+				svg {
+					width: unset;
+					height: unset;
+				}
 
-        .full__logo {
-          display: none;
-        }
+				.full__logo {
+					display: none;
+				}
 
-        .mobile__logo {
-          display: block;
-          width: 100%;
-        }
-      }
+				.mobile__logo {
+					display: block;
+					width: 100%;
+				}
+			}
 
-      .nav__items {
-        .nav__menu {
-          display: none;
-        }
+			.nav__items {
+				.nav__menu {
+					display: none;
+				}
 
-        .mobile__menu__btn {
-          display: block;
-        }
-      }
-    }
+				.mobile__menu__btn {
+					display: block;
+				}
+			}
+		}
 
-    @media screen and (max-width: $mobileXS) {
-      .nav__items {
-        .mobile__menu__btn {
-          svg {
-            width: 30px;
-          }
-        }
+		@media screen and (max-width: $mobileXS) {
+			.nav__items {
+				.mobile__menu__btn {
+					svg {
+						width: 30px;
+					}
+				}
 
-        .nav__btns {
-          button {
-            padding: 6px 12px;
-          }
-        }
-      }
-    }
-  }
+				.nav__btns {
+					button {
+						padding: 6px 12px;
+					}
+				}
+			}
+		}
+	}
 }
 
 header {
-  .header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding-top: 130px;
-    gap: 64px;
+	.header {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		padding-top: 130px;
+		gap: 64px;
 
-    .header__left {
-      max-width: 659px;
+		.header__left {
+			max-width: 659px;
 
-      h1 {
-        font-size: min(71px, max(40px + 2vw));
-        font-weight: 400;
-        color: $nativeBlack;
-        margin: 0px;
-      }
+			h1 {
+				font-size: min(71px, max(40px + 2vw));
+				font-weight: 400;
+				color: $nativeBlack;
+				margin: 0px;
+			}
 
-      p {
-        margin: 34px 0px;
-        max-width: 461px;
-        color: $secondBlack;
-      }
+			p {
+				margin: 34px 0px;
+				max-width: 461px;
+				color: $secondBlack;
+			}
 
-      .header__left__btns {
-        display: flex;
-        gap: 16px;
-        margin-bottom: 16px;
+			.header__left__btns {
+				display: flex;
+				gap: 16px;
+				margin-bottom: 16px;
 
-        a {
-          display: block;
-          padding: 9px 33px;
-          border-radius: $br;
-          text-decoration: none;
+				a {
+					display: block;
+					padding: 9px 33px;
+					border-radius: $br;
+					text-decoration: none;
 
-          &:nth-child(1) {
-            background: $primary;
-            color: $greenBlack;
-          }
+					&:nth-child(1) {
+						background: $primary;
+						color: $greenBlack;
+					}
 
-          &:nth-child(2) {
-            background: transparent;
-            color: $firstBlack;
-            border: 1px solid $firstBlack;
-          }
-        }
-      }
+					&:nth-child(2) {
+						background: transparent;
+						color: $firstBlack;
+						border: 1px solid $firstBlack;
+					}
+				}
+			}
 
-      .header__left__stars {
-        display: flex;
-        align-items: center;
-        gap: 8px;
-        user-select: none;
-        color: $secondBlack;
-      }
-    }
+			.header__left__stars {
+				display: flex;
+				align-items: center;
+				gap: 8px;
+				user-select: none;
+				color: $secondBlack;
+			}
+		}
 
-    .header__right {
-      .header__right__img {
-        img {
-          display: block;
-        }
-      }
-    }
+		.header__right {
+			.header__right__img {
+				img {
+					display: block;
+				}
+			}
+		}
 
-    @media screen and (max-width: $mobileL) {
-      justify-content: center;
-      flex-wrap: wrap;
-      text-align: center;
-      padding-top: 65px;
+		@media screen and (max-width: 810px) {
+			gap: 24px;
+		}
 
-      .header__left {
+		@media screen and (max-width: $mobileL) {
+			justify-content: center;
+			flex-wrap: wrap;
+			text-align: center;
+			padding-top: 65px;
+			gap: 64px;
 
-        .header__left__btns,
-        .header__left__stars {
-          justify-content: center;
-        }
-      }
-    }
+			.header__left {
 
-    @media screen and (max-width: $mobileS) {
-      padding-top: 32.5px;
+				.header__left__btns,
+				.header__left__stars {
+					justify-content: center;
+				}
+			}
+		}
 
-      .header__left {
-        .header__left__btns {
-          flex-wrap: wrap;
+		@media screen and (max-width: $mobileS) {
+			padding-top: 32.5px;
 
-          a {
-            width: 100%;
-          }
-        }
-      }
+			.header__left {
+				.header__left__btns {
+					flex-wrap: wrap;
 
-      .header__right {
-        .header__right__img {
-          img {
-            width: 100%;
-          }
-        }
-      }
-    }
-  }
+					a {
+						width: 100%;
+					}
+				}
+			}
+
+			.header__right {
+				.header__right__img {
+					img {
+						width: 100%;
+					}
+				}
+			}
+		}
+	}
 }
 
 main {
 	.markets__section {
+		margin-bottom: 128px;
 		.markets {
 			box-shadow: 0px 0px 16px rgba(9, 24, 26, 0.04);
 			border-radius: $br;
@@ -447,6 +455,7 @@ main {
 	}
 
 	.trade__section {
+		margin-bottom: 128px;
 		h4 {
 			font-weight: 400;
 			color: $firstBlack;
@@ -519,6 +528,20 @@ main {
 							text-align: center;
 						}
 					}
+				}
+			}
+		}
+	}
+	
+	@media screen and (max-width: $mobileL) {
+		.trade__section, .markets__section {
+			margin-bottom: 64px;
+		}
+
+		.markets__section {
+			.why__btc__markets {
+				.wbm__items {
+					gap: 32px;
 				}
 			}
 		}
