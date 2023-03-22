@@ -31,6 +31,18 @@ $tablePadding : 16px 0px;
 
 body {
 	font-family: "regular", sans-serif;
+
+	&::-webkit-scrollbar {
+		width: 8px;
+	}
+
+	&::-webkit-scrollbar-track {
+		background: #f1f1f1;
+	}
+
+	&::-webkit-scrollbar-thumb:hover {
+		background: #555;
+	}
 }
 
 .container {
@@ -74,8 +86,29 @@ nav {
 					list-style-type: none;
 
 					a {
+						position: relative;
 						color: $firstBlack;
 						text-decoration: none;
+						transition: 0.3s;
+
+						&::before {
+							content: "";
+							width: 0%;
+							height: 3px;
+							background: $primary;
+							position: absolute;
+							bottom: -10px;
+							border-radius: $br;
+							transition: 0.3s;
+						}
+
+						&:hover {
+							color: $primary;
+
+							&::before {
+								width: 100%;
+							}
+						}
 					}
 				}
 			}
@@ -90,16 +123,29 @@ nav {
 					cursor: pointer;
 					color: $firstBlack;
 					font-size: 12px;
+					transition: 0.3s;
 
 					&#login {
 						border: 1px solid $firstBlack;
 						background: transparent;
+
+						&:hover {
+							background: $greenBlack;
+							border-color: $greenBlack;
+							color: #fff;
+						}
 					}
 
 					&#signup {
 						border: 1px solid $primary;
 						background: $primary;
 						color: $greenBlack;
+
+						&:hover {
+							background: $green;
+							border-color: $green;
+							color: #fff;
+						}
 					}
 				}
 			}
@@ -202,16 +248,29 @@ header {
 					padding: 9px 33px;
 					border-radius: $br;
 					text-decoration: none;
+					transition: 0.3s;
 
 					&:nth-child(1) {
 						background: $primary;
 						color: $greenBlack;
+
+						&:hover {
+							background: $green;
+							border-color: $green;
+							color: #fff;
+						}
 					}
 
 					&:nth-child(2) {
 						background: transparent;
 						color: $firstBlack;
 						border: 1px solid $firstBlack;
+
+						&:hover {
+							background: $greenBlack;
+							border-color: $greenBlack;
+							color: #fff;
+						}
 					}
 				}
 			}
@@ -308,6 +367,22 @@ main {
 				overflow-y: hidden;
 				overflow-x: auto;
 
+				&::-webkit-scrollbar {
+					height: 8px;
+				}
+
+				&::-webkit-scrollbar-track {
+					background: #f1f1f1;
+				}
+
+				&::-webkit-scrollbar-thumb {
+					background: #888;
+				}
+
+				&::-webkit-scrollbar-thumb:hover {
+					background: #555;
+				}
+
 				table {
 					border-collapse: collapse;
 					width: 100%;
@@ -362,6 +437,14 @@ main {
 									cursor: pointer;
 									text-align: center;
 									font-size: 12px;
+									margin: 0px, 0px 0px auto;
+									transition: 0.3s;
+
+									&:hover {
+										background: $green;
+										background-color: $green;
+										color: #fff;
+									}
 								}
 							}
 						}
@@ -639,6 +722,13 @@ main {
 					border-radius: $br;
 					width: fit-content;
 					margin: 0px auto 64px auto;
+					transition: 0.3s;
+
+					&:hover {
+						background: $greenBlack;
+						border-color: $greenBlack;
+						color: #fff;
+					}
 				}
 			}
 
@@ -727,6 +817,13 @@ main {
 				width: fit-content;
 				border-radius: $br;
 				margin: 0px auto 32px auto;
+				transition: 0.3s;
+
+				&:hover {
+					background: $green;
+					border-color: $green;
+					color: #fff;
+				}
 			}
 
 			.tree__easy__steps__stars {
@@ -798,6 +895,13 @@ main {
 			border-radius: $br;
 			width: fit-content;
 			margin: 32px auto 0px auto;
+			transition: 0.3s;
+
+			&:hover {
+				background: $greenBlack;
+				border-color: $greenBlack;
+				color: #fff;
+			}
 		}
 	}
 
@@ -826,6 +930,7 @@ main {
 			.latest__news__item {
 				box-shadow: 0px 0px 16px rgba(9, 24, 26, 0.04);
 				border-radius: 8px;
+				transition: all 0.3s;
 
 				.latest__news__item__cover {
 					max-width: 357px;
@@ -837,6 +942,7 @@ main {
 						width: 100%;
 						height: 100%;
 						object-fit: cover;
+						transition: transform 0.3s;
 					}
 				}
 
@@ -894,6 +1000,26 @@ main {
 					color: $firstBlack;
 					padding: 0px 16px 16px 16px;
 				}
+
+				&:hover {
+					box-shadow: 0px 0px 32px rgba(9, 24, 26, 0.3);
+
+					.latest__news__item__cover {
+						img {
+							transform: scale(1.1);
+						}
+					}
+
+					h4 {
+						a {
+							color: $greenBlack;
+						}
+					}
+
+					.read__more {
+						color: $green;
+					}
+				}
 			}
 
 			@media screen and (max-width: $tablet) {
@@ -908,6 +1034,10 @@ main {
 			text-align: center;
 			color: $firstBlack;
 			margin-bottom: 64px;
+
+			&:hover {
+				text-decoration: underline;
+			}
 		}
 
 		.social {
@@ -926,7 +1056,51 @@ main {
 				gap: 10px;
 				text-decoration: none;
 				font-size: 16px;
-				color: $firstBlack
+				color: $firstBlack;
+				transition: 0.3s;
+
+				svg {
+					path {
+						transition: 0.3s;
+					}
+				}
+
+				&:hover {
+					color: $green;
+
+					svg {
+						path {
+							fill: $green;
+						}
+					}
+				}
+			}
+		}
+	}
+
+	.before__footer {
+		h2 {
+			text-align: center;
+			font-size: min(40px, max(20px + 2vw));
+			font-weight: 400;
+			margin: 0px auto 32px auto;
+		}
+
+		a {
+			display: block;
+			text-decoration: none;
+			padding: 9px 33px;
+			background: $primary;
+			color: $greenBlack;
+			width: fit-content;
+			border-radius: $br;
+			margin: 0px auto 32px auto;
+			transition: 0.3s;
+
+			&:hover {
+				background:$green;
+				border-color: $green;
+				color: #fff;
 			}
 		}
 	}
@@ -956,6 +1130,126 @@ main {
 	}
 }
 
+footer {
+	margin-top: 128px;
+
+	.footer {
+		display: flex;
+		gap: 64px;
+
+		.footer__item {
+			flex: 1 1 227px;
+
+			h4 {
+				margin-top: 0;
+				margin-bottom: 32px;
+				color: $firstBlack;
+				font-weight: 400;
+				font-size: 16px;
+			}
+
+			ul {
+				li {
+					list-style-type: none;
+
+					a {
+						display: block;
+						text-decoration: none;
+						color: $footerBlack;
+						margin-bottom: 16px;
+
+						svg {
+							path {
+								fill: $footerBlack;
+							}
+						}
+
+						&:hover {
+							text-decoration: underline;
+						}
+					}
+
+					img {
+						width: 120px;
+						height: 40px;
+						display: block;
+					}
+				}
+			}
+
+			&:nth-child(4) {
+				li {
+					a {
+						display: flex;
+						align-items: center;
+						gap:8px;
+					}
+				}
+			}
+		}
+
+		@media screen and (max-width: $tablet) {
+			flex-wrap: wrap;
+		}
+
+		@media screen and (max-width: $mobileL) {
+			text-align: center;
+
+			.footer__item {
+				flex: 1 1 100%;
+
+				li {
+					img {
+						margin: 0px auto 8px auto;
+					}
+				}
+
+				&:nth-child(4) {
+					li {
+
+						a {
+							justify-content: center;
+						}
+					}
+				}
+			}
+		}
+	}
+
+	.footer__info{
+		text-align: center;
+		font-size: 14px;
+		color: $secondBlack;
+		margin-top: 128px;
+		margin-bottom: 64px;
+
+		p {
+			margin: 0;
+		}
+
+		.footer__info__top {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			gap: 32px;
+			margin-bottom: 16px;
+
+			@media screen and (max-width: $mobileL) {
+				flex-wrap: wrap;
+				gap: 16px;
+
+				p {
+					width: 100%;
+				}
+			}
+		}
+
+		.footer__info__bottom {
+			font-size: 12px;
+		}
+	}
+}
+
 
 // NORMALIZE CSS
 
@@ -969,7 +1263,7 @@ main {
  * 2. Prevent adjustments of font size after orientation changes in iOS.
  */
 
- * {
+* {
 	box-sizing: border-box;
 }
 
